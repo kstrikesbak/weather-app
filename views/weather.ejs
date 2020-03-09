@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>5 day Weather Forecast for <%= cityUpperCased %></h1>
+
+    <div id="mainContent">
+        <% weather.list.forEach(({main:{temp_min, temp_max, humidity}, weather, wind:{speed}, dt_txt})=>{ %>
+            <div class = "content">
+            <p> Date: <%= dt_txt.slice(8,10) %>/<%= dt_txt.slice(5,7) %> Time: <%= dt_txt.slice(11,16) %></p>
+                <%if (weather[0].description === 'overcast clouds') { %>
+                    <img src="https://images.all-free-download.com/images/graphiclarge/tango_weather_overcast_115976.jpg" height="50" width="50">
+                    <% } %>
+    
+                <%if (weather[0].description === 'light rain') { %>
+                    <img src="https://previews.123rf.com/images/baldezh/baldezh1907/baldezh190700138/126428528-light-blue-cartoon-style-icon-of-summer-rain-with-cloud-isolated-on-white-background-illustration-of.jpg" height="50" width="50">
+                    <% } %>
+    
+                <%if (weather[0].description === 'scattered clouds') { %>
+                    <img src="https://lh3.googleusercontent.com/proxy/mC_nLWXUtH96WHvyp-treCKbSupJdW9XsTKkWD2AGDUHnz0d3p4c0_HBjdsTPcujaIaptxG26-9LAUuMsl6vOcpDPQsX9QE" height="50" width="50">
+                    <% } %>
+    
+                <%if (weather[0].description === 'broken clouds') { %>
+                    <img src="data:image/jpeg;base64,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" height="50" width="50">
+                    <% } %>
+    
+                <%if (weather[0].description === 'clear sky') { %>
+                    <img src="https://torange.biz/photofx/1/8/mirror-macro-blurring-top-bottom-sky-clear-1049.jpg" height="50" width="50">
+                    <% } %>
+
+                <%if (weather[0].description === 'moderate rain') { %>
+                    <img src="https://s.pngkit.com/png/small/1-14654_cloud-rain-heavy-rain-cross-rain-comments-cloud.png" height="50" width="50">
+                    <% } %>
+    
+                <%if (weather[0].description === 'few clouds') { %>
+                    <img src="https://ak6.picdn.net/shutterstock/videos/1027902866/thumb/1.jpg?ip=x480" height="50" width="50">
+                    <% } %>
+                    
+                <p>Theme: <%= weather[0].description %> </p>
+                <p>Min Temp is <%= Math.round(temp_min - 273.15) %> °C</p>
+                <p>Max Temp is <%= Math.round(temp_max - 273.15) %> °C</p>
+                <p>Wind Speed: <%= speed %> mph </p>
+                <p>Humidity: <%= humidity %>%</p>
+                <!-- <img src=<%#img%> height="100" width="100" > -->
+    
+            </div>
+    
+            <%}) %> 
+    </div>
+    
+
+    <br>
+    <br>
+   
+  </body>
+</html>

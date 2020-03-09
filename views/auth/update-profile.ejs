@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <% include ../partials/head %>
+    <title>SignIn-Online Shopper</title>
+  </head>
+  <body>
+    <% include ../partials/nav %>
+    <div class="container">
+      <div class="row">
+        <div
+          class="
+          col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3 my-form"
+        >
+              <h2>Update Profile</h2>
+              <br />
+              <hr class="colorgraph" />
+                <form role="form" method="POST" action="/api/users/update-profile?_method=PUT">
+                    <fieldset>
+                        <img src="<%= user.profile.picture %>" alt="profile"/>
+
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" name="name" id="name" class="form-control input-lg" value="<%= user.profile.name %>"/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="text" name="email" id="email" class="form-control input-lg" value="<%= user.email %>"/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address">Address:</label>
+                            <input type="text" name="address" id="address" class="form-control input-lg" value="<%= user.address %>"/>
+                        </div>
+                        
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                            <input
+                              type="submit"
+                              class="btn btn-lg btn-success btn-block"
+                              value="Update Profile"
+                            />
+                          </div>
+
+                    </fieldset>
+            
+                </form>
+
+                
+                <hr class="colorgraph" />
+                <form role="form" method="POST" action="/api/users/update-password?_method=PUT">
+                
+            <h5>Change Password:</h5>
+
+            <fieldset>
+
+                <div class="form-group">
+                    <label for="oldPassword">Old Password:</label>
+                    <input type="password" name="oldPassword" id="oldPassword" class="form-control input-lg" placeholder="Old Password"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="newPassword">New Password:</label>
+                    <input type="password" name="newPassword" id="newPassword" class="form-control input-lg" placeholder="New Password"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="repeatNewPassword">Repeat New Password:</label>
+                    <input type="password" name="repeatNewPassword" id="repeatNewPassword" class="form-control input-lg" placeholder="Repeat New Password"/>
+                </div>
+
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <input
+                      type="submit"
+                      class="btn btn-lg btn-success btn-block"
+                      value="Update Password"
+                    />
+                  </div>
+
+                  
+                  
+                </fieldset>
+                <hr class="colorgraph" />
+            
+            </form>
+                
+              </div>
+        </div>
+      </div>
+    </div>
+    <% include ../partials/scripts %>
+  </body>
+</html>

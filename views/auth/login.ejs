@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <%- include ../partials/head%>
+    <style>
+       .my-form {
+    width: 50%;
+    margin: 200px auto 0 auto;
+  }
+    </style>
+  </head>
+  <body>
+    <% include ../partials/nav %>
+      <div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3 my-form">
+            <%/* if (errors.length>0) { */%>
+             <p><%# errors %> </p>
+            <%# } %>
+        <% if (errors.length > 0) { %>
+         <div class ="alert alert-danger alert-dismissible">
+            <button
+            type="button"
+            class="close"
+            data-dismiss="alert"
+            aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+          <%= errors %>
+          </div>
+        <%} %>
+        <form role="form" method="POST" action="/api/users/login">
+          <fieldset>
+            <h2>Please Log in  <span class="button-checkbox">
+                <a href="#" class="btn btn-link pull-right">Already A Member?</a>
+              </span></h2>
+            <hr class="colorgraph">
+            <div class="form-group">
+                        <input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address">
+            </div>
+            <div class="form-group">
+                        <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password">
+                        </div>
+            <!-- <div class="form-group">
+              <label for="admin">Admin:</label>&nbsp;&nbsp;<input  type="checkbox" name="admin" id="admin" class=" input-lg" value="true">
+            </div> -->
+            <hr class="colorgraph">
+            <div class="row">
+              <div class="col-xs-6 col-sm-6 col-md-6">
+                <input type="submit" class="btn btn-lg btn-primary btn-block" value="Login">
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+    </div>
+      <% include ../partials/scripts %>
+  </body>
+</html>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Login-Online Shopper</title>
+    <style>
+      .my-form {
+        width: 50%;
+        margin: 200px auto 0 auto;
+      }
+      .colorgraph {
+          height: 5px;
+          border-top: 0;
+          background: #C4E17F;
+          border-radius: 5px;
+          background-image: -webkit-linear-gradient(left, #C4E17F, #C4E17F 12.5%, #F7FDCA 12.5%, #F7FDCA 25%, #FECF71 25%, #FECF71 37.5%, #F0776C 37.5%, #F0776C 50%, #DB9DBE 50%, #DB9DBE 62.5%, #C49CDE 62.5%, #C49CDE 75%, #669AE1 75%, #669AE1 87.5%, #62C2E4 87.5%, #62C2E4);
+          background-image: -moz-linear-gradient(left, #C4E17F, #C4E17F 12.5%, #F7FDCA 12.5%, #F7FDCA 25%, #FECF71 25%, #FECF71 37.5%, #F0776C 37.5%, #F0776C 50%, #DB9DBE 50%, #DB9DBE 62.5%, #C49CDE 62.5%, #C49CDE 75%, #669AE1 75%, #669AE1 87.5%, #62C2E4 87.5%, #62C2E4);
+          background-image: -o-linear-gradient(left, #C4E17F, #C4E17F 12.5%, #F7FDCA 12.5%, #F7FDCA 25%, #FECF71 25%, #FECF71 37.5%, #F0776C 37.5%, #F0776C 50%, #DB9DBE 50%, #DB9DBE 62.5%, #C49CDE 62.5%, #C49CDE 75%, #669AE1 75%, #669AE1 87.5%, #62C2E4 87.5%, #62C2E4);
+          background-image: linear-gradient(to right, #C4E17F, #C4E17F 12.5%, #F7FDCA 12.5%, #F7FDCA 25%, #FECF71 25%, #FECF71 37.5%, #F0776C 37.5%, #F0776C 50%, #DB9DBE 50%, #DB9DBE 62.5%, #C49CDE 62.5%, #C49CDE 75%, #669AE1 75%, #669AE1 87.5%, #62C2E4 87.5%, #62C2E4);
+        }
+    </style>
+  </head>
+  <body>
+    <% include ../partials/nav %>
+      <div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3 my-form">
+        <%/* if (errors.length > 0) { */%>
+         <!-- <div class ="alert alert-danger alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+          <%=/* errors */%>
+          </div>
+        <%/* } */%> -->
+        <!-- <form role="form" method="POST" action="/api/users/login">
+          <fieldset>
+            <h2>Please Sign Up  <span class="button-checkbox">
+                <a href="#" class="btn btn-link pull-right">Already A Member?</a>
+              </span></h2>
+            <hr class="colorgraph"> -->
+                    <!-- <div class="form-group">
+                        <input type="text" name="name" id="name" class="form-control input-lg" placeholder="Full Name">
+            </div> -->
+            <!-- <div class="form-group">
+                        <input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address">
+            </div>
+            <div class="form-group">
+                        <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password">
+                        </div>
+            <div class="form-group">
+              <label for="admin">Admin:</label>&nbsp;&nbsp;<input  type="checkbox" name="admin" id="admin" class=" input-lg" value="true">
+            </div>
+            <hr class="colorgraph">
+            <div class="row">
+              <div class="col-xs-6 col-sm-6 col-md-6">
+                <input type="submit" class="btn btn-lg btn-primary btn-block" value="Login">
+              </div>
+            </div> -->
+          </fieldset>
+        </form>
+      </div>
+    </div>
+    </div>
+      <% include ../partials/scripts %>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
